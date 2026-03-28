@@ -17,7 +17,7 @@ pipeline{
 
         stage("Build docker image"){
             steps{
-                sh 'docker build -t $IMAGE_NAME'
+                sh 'docker build -t $IMAGE_NAME .'
             }
         }
 
@@ -41,8 +41,8 @@ pipeline{
         stage("send email Notification "){
             steps{
                 emailtext(
-                    subject : "Nestjs app deployed on ec2 with docker "
-                    body : "your nestjs app is Deployed at http://3.26.73.86:${PORT}/"
+                    subject : "Nestjs app deployed on ec2 with docker ",
+                    body : "your nestjs app is Deployed at http://3.26.73.86:${PORT}/",
                     to : "${EMAIL}"
                 )
             }
