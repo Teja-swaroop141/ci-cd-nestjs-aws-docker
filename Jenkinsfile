@@ -8,10 +8,11 @@ pipeline{
     }
 
     stages{
-        stage("clone repo")
-        steps{
-            git branch : "main",
-            url : "https://github.com/Teja-swaroop141/ci-cd-nestjs-aws-docker.git"
+        stage("clone repo"){
+            steps{
+                git branch : "main",
+                url : "https://github.com/Teja-swaroop141/ci-cd-nestjs-aws-docker.git"
+            }
         }
 
 
