@@ -40,7 +40,7 @@ pipeline{
 
         stage("send email Notification "){
             steps{
-                emailtext(
+                emailext(
                     subject : "Nestjs app deployed on ec2 with docker ",
                     body : "your nestjs app is Deployed at http://3.26.73.86:${PORT}/",
                     to : "${EMAIL}"
