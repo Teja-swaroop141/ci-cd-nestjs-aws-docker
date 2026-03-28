@@ -9,8 +9,9 @@ pipeline{
 
     stages{
         stage("Checkout Code") {
-            steps {
-                checkout scm
+            steps{
+                git branch : "main" , 
+                url : "https://github.com/Teja-swaroop141/ci-cd-nestjs-aws-docker.git"
             }
         }
 
